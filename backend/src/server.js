@@ -1,10 +1,13 @@
+require("./database/database")
+
 const express = require("express");
-const cors = require("cors");
+const cors = require("cors");const filmesRoutes = require("./routes/filmes.routes");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(filmesRoutes);
 
 app.get("/", (req, res) => {
   res.send("API funcionando");
